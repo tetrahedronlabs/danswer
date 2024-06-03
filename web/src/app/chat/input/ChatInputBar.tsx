@@ -55,7 +55,7 @@ export function ChatInputBar({
     }
   }, [message]);
 
-  const { llmProviders } = useChatContext();
+  const { user, llmProviders } = useChatContext();
   const [_, llmName] = getFinalLLM(llmProviders, selectedAssistant);
 
   return (
@@ -151,6 +151,10 @@ export function ChatInputBar({
                   message &&
                   !isStreaming
                 ) {
+                  umami.track("Message Submitted", {
+                    [user ? user.email : "Anonymous Possum"]:
+                      message.slice(0, 500),
+                  });
                   onSubmit();
                   event.preventDefault();
                 }

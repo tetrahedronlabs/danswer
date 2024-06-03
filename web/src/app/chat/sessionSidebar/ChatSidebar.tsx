@@ -68,13 +68,18 @@ export const ChatSidebar = ({
               settings && settings.default_page === "chat" ? "/chat" : "/search"
             }
           >
-            <div className="flex w-full">
-              <div className="h-[32px] w-[30px]">
-                <Image src="/logo.png" alt="Logo" width="1419" height="1520" />
+            <div className="flex flex-col">
+              <div className="flex w-full">
+                <div className="h-[32px] w-[30px]">
+                  <Image src="/logo.png" alt="Logo" width="1419" height="1520" />
+                </div>
+                <h1 className="flex text-2xl text-strong font-bold my-auto">
+                  Mantle
+                </h1>
               </div>
-              <h1 className="flex text-2xl text-strong font-bold my-auto">
-                Danswer
-              </h1>
+              <div className="text-xs text-gray-250 mt-1">
+                powered by danswer
+              </div>
             </div>
           </Link>
         </div>

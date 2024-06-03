@@ -69,13 +69,18 @@ export function Header({ user }: HeaderProps) {
             settings && settings.default_page === "chat" ? "/chat" : "/search"
           }
         >
-          <div className="flex">
+          <div className="flex items-center">
             <div className="h-[32px] w-[30px]">
               <Image src="/logo.png" alt="Logo" width="1419" height="1520" />
             </div>
-            <h1 className="flex text-2xl text-strong font-bold my-auto">
-              Danswer
-            </h1>
+            <div className="flex flex-col ml-2">
+              <h1 className="text-2xl font-bold">
+                Mantle
+              </h1>
+              <div className="text-xs text-gray-500 mt-1">
+                powered by danswer
+              </div>
+            </div>
           </div>
         </Link>
 
